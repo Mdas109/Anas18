@@ -2,7 +2,7 @@
 
 
 <!DOCTYPE html>
-<html manifest="cache.manifest">
+<html>
 	
 
 <head>
@@ -18,7 +18,7 @@
  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
    
   
-  <title>Star Sports 1 HD | Anas live tv  </title>
+  <title>Discovery kids | Anas live tv  </title>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
 
@@ -46,7 +46,7 @@
    background: w
   }
 
-  #jwplayerDi{
+  # my-video{
    padding: 47.50% 0 0 0;
    position: relative;
    width: 90%;
@@ -438,21 +438,40 @@
 
 <script src="https://content.jwplatform.com/libraries/Z79JsmAO.js"></script>
 
-<div id="jwplayerDiv"><iframe width="330" height="200" src="https://denverog.github.io/DenverLinks.in/Sports.html?id=876" title="Star sports 1 HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>                
+<div id="jwplayerDiv"><div id="my-video"></div></div>
+   
+</div>
 
+<script>
+    // Setup JWPlayer
+    jwplayer("my-video").setup({
+        autostart: false,
+        file: "https://mdas109.github.io/1Anas/Distamil.m3u8",
+        image: "https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-24724-jgvwokqw-v1/imageContent-24724-jgvwokqw-m1.png",
+        Playback: "true",
+        width: "100%", // Set width to 100%
+        aspectratio: "16:9", // Standard aspect ratio
+        primary: "html",
+    });
+</script>
+
+  
   
 
 
 <div class="program-info">
-  <img class="logo" src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-8301-j7hc0820-v1/imageContent-8301-j7hc0820-m1.png" alt="Channel Logo">
-  <span class="s-n"><div class="Red-bg">STREAMING NOW </div></span>
-  <span class="channel-name">Star Sports 1 Hd<br><span class="live-text" style="color:brown"></span></span>
-  <div class="program-name">IPL 2024 Live<br>
-    <span class="timex" style="font-style: italic;color:teal">Category: Sports<br></span>
+  <img class="logo" src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-24724-jgvwokqw-v1/imageContent-24724-jgvwokqw-m1.png" alt="Channel Logo">
+  <span class="s-n">STREAMING NOW </span>
+  <span class="channel-name">Discovery Kids<br><span class="live-text" style="color:brown"></span></span>
+  <div class="program-name">Get Set Go Kris<br>
+    <span class="timex" style="font-style: italic;color:teal">Category: Kids<br></span>
   <!-- <span class="timex" style="font-style: italic;color:teal">Starttime: <br></span>
    <span class="timex" style="font-style: italic;color:teal">Endtime: <br></span>--> 
   </div>
   <div class="program-description"></div>
  </div>
+
+</div>
+
 
 </body>
