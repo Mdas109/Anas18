@@ -423,6 +423,119 @@
    display: block;
   }
   
+  @media (max-width:450px){
+
+   .container .main-video-container .main-vid-title{
+      font-size: 15px;
+      text-align: center;
+   }
+
+   .container .video-list-container .list{
+      flex-flow: column;
+      gap:10px;
+   }
+
+   .container .video-list-container .list .list-video{
+      width: 100%;
+   }
+
+   .container .video-list-container .list .list-title{
+      font-size: 15px;
+      text-align: center;
+   }
+    
+
+
+}
+
+      .my-iframe {
+        position: relative;
+        padding-top: 100.25%;
+        height: 100%;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .my-iframe iframe {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 300px;
+      }
+
+  #channel-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: #C0C0C0;
+      }
+
+      #channel-list li {
+       cursor: pointer;
+        padding: 10px;
+        border-bottom: 5px solid #FF0000;
+        transition: background-color 0.2s ease-in-out;
+        display: flex;
+        align-items: center;
+      }
+
+      #channel-list li:hover {
+        background-color: #808080;
+      }
+
+      .channel-icon {
+        width: 34px;
+        height: 34px;
+        margin-right: 15px;
+        display: inline-block;
+      }
+/* CSS */
+#channel-list li {
+  font-size: 16px; /* Set the base font size */
+ font-weight: bold;
+   color:#black;
+
+}
+ 
+
+<!-- eztra -->
+
+        .additional-content {
+           margin-top: px;
+           text-align: center;
+       }
+
+.main-video-container {
+  position: relative;
+}
+
+#myElement img {
+    position: absolute;
+    top: 33px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+}
+
+#languageSelector {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 200px;
+}
+
+#languageSelector option {
+  padding: 5px;
+}
+
+/* Add more styles as needed */
+
+h100 {
+    font-size: 10px; /* You can adjust the size to your preference */
+}
  
  </style>
   </style>
@@ -433,17 +546,88 @@
   
   
 
-
-
+  <center> <h4> Try sever 2 when server 1 is not working</h4></center>
 
 <script src="https://content.jwplatform.com/libraries/Z79JsmAO.js"></script>
 
-<div id="jwplayerDiv"><div id="my-video"></div></div>
-   
+
+ <div class="container">
+
+
+
+   <div class="main-video-container">
+   <!--   <video src="images/vid-1.mp4" loop controls class="main-video"></video> -->
+
+<div class="my-iframe" id="iframe-container">
+      <iframe src="scripts/SS1T.html" allowfullscreen scrolling="no"></iframe>
+    </div>
+
+      <h5 class="main-vid-title"></h5>
+
+   </div>
+
+
+   <div class="video-list-container" >
+
+      <!-- <div class="list active">
+       <video src="images/vid-1.mp4" class="list-video"></video>
+         <h3 class="list-title">house flood animation</h3>
+      </div>
+
+      <div class="list">
+         <video src="images/vid-2.mp4" class="list-video"></video>
+         <h3 class="list-title">zoombie walking animation</h3>
+      </div> -->
+
+
+
+     
+     <ul id="channel-list">
+        <li data-src="SS1T.html"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3VFzAlfWDd5w6DxPWzlE6oxtp1zij7rDwznWgG0Bwg&s" alt="Server 1" class="channel-icon" >
+         Server 1
+       </li>
+     
+      <li data-src="SST.html">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3VFzAlfWDd5w6DxPWzlE6oxtp1zij7rDwznWgG0Bwg&s" alt="Server 2" class="channel-icon">
+      Server 2
+       </li>
+       
+      <li data-src="https://live.vkplay.ru/app/embed/bulb">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3VFzAlfWDd5w6DxPWzlE6oxtp1zij7rDwznWgG0Bwg&s" alt="Server 2" class="channel-icon">
+      Server 3
+       </li>
+
+      <li data-src="https://live.vkplay.ru/app/embed/Tamilgun">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3VFzAlfWDd5w6DxPWzlE6oxtp1zij7rDwznWgG0Bwg&s" alt="Server 3" class="channel-icon">
+      Server 4
+       </li>
+
+
+    </ul>
 </div>
+   
+    <!-- channel list -->
 
-  <iframe style="width: 100%; height: 400px;" src="https://live.vkplay.ru/app/embed/tamilgun" title="Star Sports 1 Tamil" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <script>
+      const channelList = document.getElementById("channel-list");
+      const iframeContainer = document.getElementById("iframe-container");
+      let currentIframe = null;
 
+      channelList.addEventListener("click", (event) => {
+        if (event.target.tagName === "LI") {
+          const src = event.target.getAttribute("data-src");
+          iframeContainer.innerHTML = `<iframe src="${src}" allowfullscreen></iframe>`;
+          if (currentIframe !== null) {
+            currentIframe.remove();
+          }
+          currentIframe = iframeContainer.firstChild;
+        }
+      });
+    </script>
+   
+
+  
 <div class="program-info">
   <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3VFzAlfWDd5w6DxPWzlE6oxtp1zij7rDwznWgG0Bwg&s" alt="Channel Logo">
   <span class="s-n">STREAMING NOW </span>
