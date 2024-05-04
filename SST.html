@@ -24,13 +24,17 @@
     <script>
         var playerElement = document.getElementById("player-wrapper");
         var player = new Clappr.Player({
-            source: "https://vsd134.mycdn.me/hls/6586500319790.m3u8/sig/oSbvpQzKZnY/expires/1714739499282/srcIp/42.106.176.55/urls/185.226.53.54/clientType/36/srcAg/CHROME_ANDROID/mid/7729851025198/6586500319790/video.m3u8?p",
+            source: "https://vsd151.mycdn.me/hls/6556762835694.m3u8/sig/MGVnTzHJYtc/expires/1714825306788/srcIp/42.106.179.92/urls/45.136.21.89/clientType/36/srcAg/CHROME_ANDROID/mid/7471106115566/6556762835694/video.m3u8?p",
             mimeType: 'application/vnd.apple.mpegurl',
             mute: false,
             autoPlay: true,
             height: '100vh',
             width: '100%',
-        });
+            "logo": {
+                   "file": "Anas.jpg",
+                   "hide": "false",
+                   "position": "bottom-right" }
+                });
         player.attachTo(playerElement);
         player.play();
         play();
