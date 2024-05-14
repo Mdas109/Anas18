@@ -43,7 +43,7 @@
    background: w
   }
 
-  # my-video{
+  #jwplayerDiv{
    padding: 47.50% 0 0 0;
    position: relative;
    width: 90%;
@@ -89,7 +89,7 @@
    border: 1px solid rgb(255, 60, 140)
   }
 
-  #video-player {
+  # video-player {
    width: auto;
    height: auto;
    margin: 10px;
@@ -436,10 +436,37 @@
 <script src="https://content.jwplatform.com/libraries/Z79JsmAO.js"></script> 
 
 
-<center><iframe width="300" height="400" src="https://mdas109.github.io/embed/SPT.html" title="WiLlOw HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </center>
-  
+<div class="banner">
+    <!-- Your banner content goes here -->
+</div>
 
+<div id="jwplayerDiv"></div>
+<script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+<script type="text/javascript">
+    jwplayer("jwplayerDiv").setup({
+        file: "https://linear-novi.stvacdn.spectrum.com/LIVE/1131/dash/cenc/WLLOHD_10364/manifest.mpd",
+        type: "dash",
+        autoPlay: false,
+        height: '50vh',
+        width: '100%',
+        drm: {
+            "clearkey": {
+                "keyId": "6653c05e42fc4fac8f49d7cbf99498fe",
+                "key": "3b88f2cff3affef20b265c840bafc0cc"
+            }
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        var elem = document.documentElement;
+        var requestFullScreen = elem.requestFullscreen || elem.mozRequestFullScreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen;
+        requestFullScreen.call(elem);
+    });
+</script>
+
+  
 
 <div class="program-info">
   <img class="logo" src="data:image/png;base64,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" alt="Channel Logo">
